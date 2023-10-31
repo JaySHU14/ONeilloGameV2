@@ -1,0 +1,10 @@
+C:\Users\JacobA\Desktop\ONeilloGameV2\ONeilloGameV2\bin\Debug\ONeilloGameV2.exe.config
+C:\Users\JacobA\Desktop\ONeilloGameV2\ONeilloGameV2\bin\Debug\ONeilloGameV2.exe
+C:\Users\JacobA\Desktop\ONeilloGameV2\ONeilloGameV2\bin\Debug\ONeilloGameV2.pdb
+C:\Users\JacobA\Desktop\ONeilloGameV2\ONeilloGameV2\obj\Debug\ONeilloGameV2.csproj.AssemblyReference.cache
+C:\Users\JacobA\Desktop\ONeilloGameV2\ONeilloGameV2\obj\Debug\ONeilloGameV2.Properties.Resources.resources
+C:\Users\JacobA\Desktop\ONeilloGameV2\ONeilloGameV2\obj\Debug\ONeilloGameV2.csproj.GenerateResource.cache
+C:\Users\JacobA\Desktop\ONeilloGameV2\ONeilloGameV2\obj\Debug\ONeilloGameV2.csproj.CoreCompileInputs.cache
+C:\Users\JacobA\Desktop\ONeilloGameV2\ONeilloGameV2\obj\Debug\ONeilloGameV2.exe
+C:\Users\JacobA\Desktop\ONeilloGameV2\ONeilloGameV2\obj\Debug\ONeilloGameV2.pdb
+C:\Users\JacobA\Desktop\ONeilloGameV2\ONeilloGameV2\obj\Debug\ONeilloGameV2.Form1.resources
