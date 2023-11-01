@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,8 @@ namespace ONeilloGameV2
         private const int cellSize = 50; // set the size of the cells in pixels
         private int[,] board = new int[boardSize, boardSize]; // create new 2D array representing the size of the board x the size of the board (8x8)
         private int currentPlayer = 1; // start with player 1
+        private int blackCount = 0;
+        private int whiteCount = 0;
 
         public Form1()
         {
@@ -26,14 +29,50 @@ namespace ONeilloGameV2
             SetBoard();
         }
 
-        private void FormComponents()
+        private void FormComponents() // set the characteristics of the form
         {
-            int width = (boardSize * cellSize) + 20;
-            int height = boardSize * cellSize + cellSize * 2;
+            int width = (boardSize * cellSize) + 20; // declare the form's width
+            int height = boardSize * cellSize + cellSize * 4; // declare the form's height
 
             this.Text = "ONeillo Game V2"; // set the name of the form 
             this.BackColor = Color.Green; // setting the background of the form to green
             this.Size = new Size(width, height);
+
+            /*
+            TabControl tabControl = new TabControl(); // initialise a new instance of the TabControl class that will manage the tab and its contents
+            tabControl.Dock = DockStyle.Top; // setting the tab to the top of the form
+
+            TabPage gameTab = new TabPage("Game"); // creating a tab on the form to handle the new game and save game buttons
+            tabControl.TabPages.Add(gameTab);
+
+            Button newGameBtn = new Button();
+            newGameBtn.Text = "New Game";
+            newGameBtn.Size = new Size(100, 30);
+            newGameBtn.Location = new Point((boardSize * cellSize - newGameBtn.Width) / 2, boardSize * cellSize);
+            newGameBtn.Click += new EventHandler(newGameBtn_Click);
+            
+            gameTab.Controls.Add(newGameBtn);
+            
+            // Add the tab control to the form.
+            this.Controls.Add(tabControl);
+            
+
+            MenuStrip menuStrip = new MenuStrip();
+            this.MainMenuStrip = menuStrip;
+
+            // Create a "Game" menu.
+            ToolStripMenuItem gameMenu = new ToolStripMenuItem("Game");
+            menuStrip.Items.Add(gameMenu);
+
+            // Create a "New Game" option inside the "Game" menu.
+            ToolStripMenuItem newGameOption = new ToolStripMenuItem("New Game");
+            newGameOption.Click += new EventHandler(newGameOption_Click);
+            gameMenu.DropDownItems.Add(newGameOption);
+
+            */
+
+
+
         }
         private void InitialiseBoard()
         {
@@ -51,7 +90,7 @@ namespace ONeilloGameV2
                 {
                     Button button = new Button();
                     button.Size = new Size(cellSize, cellSize);
-                    button.Location = new Point(col * cellSize, row * cellSize);
+                    button.Location = new Point(col * cellSize, row * cellSize + 30); // set the location for the board on the app. the board has to be lowered due to the menu strip being implemented
                     button.Click += new EventHandler(CellClicked);
                     button.Name = "btn_" + row + "_" + col;
 
@@ -74,7 +113,6 @@ namespace ONeilloGameV2
                 }
             }
         }
-
         private void CellClicked(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -110,7 +148,7 @@ namespace ONeilloGameV2
                         if (board[row, col] == 1)
                         {
                             button.BackColor = Color.Black;
-                            button.Enabled = false;
+                            button.Enabled = false;  
                         }
                         else if (board[row, col] == 2)
                         {
@@ -239,34 +277,15 @@ namespace ONeilloGameV2
 
             return true;
         }
-
-        private void GameOverMessage()
+        private void GameOverMessage() // declared public so i can access counts of black and white counters
         {
-            int blackCount = 0;
-            int whiteCount = 0;
-
-            for (int row = 0; row < boardSize; row++)
-            {
-                for (int col = 0; col < boardSize; col++)
-                {
-                    if (board[row, col] == 1)
-                    {
-                        blackCount++;
-                    }
-                    else if (board[row, col] == 2)
-                    {
-                        whiteCount++;
-                    }
-                }
-            }
-
             if (blackCount > whiteCount)
             {
-                MessageBox.Show("Black wins!");
+                MessageBox.Show($"{textBox2.Text} wins!"); // since black is always player 2, they will win if their black count is greater than the white count towards the end of the game
             }
             else if (whiteCount > blackCount)
             {
-                MessageBox.Show("White wins!");
+                MessageBox.Show($"{textBox1.Text} wins!");
             }
             else
             {
