@@ -38,10 +38,10 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoPanel = new System.Windows.Forms.Panel();
+            this.labelPlayer2Score = new System.Windows.Forms.Label();
+            this.labelPlayer1Score = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labelPlayer1Score = new System.Windows.Forms.Label();
-            this.labelPlayer2Score = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.infoPanel.SuspendLayout();
             this.SuspendLayout();
@@ -126,6 +126,24 @@
             this.infoPanel.Size = new System.Drawing.Size(380, 88);
             this.infoPanel.TabIndex = 1;
             // 
+            // labelPlayer2Score
+            // 
+            this.labelPlayer2Score.AutoSize = true;
+            this.labelPlayer2Score.Location = new System.Drawing.Point(278, 54);
+            this.labelPlayer2Score.Name = "labelPlayer2Score";
+            this.labelPlayer2Score.Size = new System.Drawing.Size(35, 13);
+            this.labelPlayer2Score.TabIndex = 3;
+            this.labelPlayer2Score.Text = "Score";
+            // 
+            // labelPlayer1Score
+            // 
+            this.labelPlayer1Score.AutoSize = true;
+            this.labelPlayer1Score.Location = new System.Drawing.Point(33, 54);
+            this.labelPlayer1Score.Name = "labelPlayer1Score";
+            this.labelPlayer1Score.Size = new System.Drawing.Size(35, 13);
+            this.labelPlayer1Score.TabIndex = 2;
+            this.labelPlayer1Score.Text = "Score";
+            // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(245, 31);
@@ -141,24 +159,6 @@
             this.textBox1.Size = new System.Drawing.Size(113, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Player #1";
-            // 
-            // labelPlayer1Score
-            // 
-            this.labelPlayer1Score.AutoSize = true;
-            this.labelPlayer1Score.Location = new System.Drawing.Point(33, 54);
-            this.labelPlayer1Score.Name = "labelPlayer1Score";
-            this.labelPlayer1Score.Size = new System.Drawing.Size(92, 13);
-            this.labelPlayer1Score.TabIndex = 2;
-            this.labelPlayer1Score.Text = "labelPlayer1Score";
-            // 
-            // labelPlayer2Score
-            // 
-            this.labelPlayer2Score.AutoSize = true;
-            this.labelPlayer2Score.Location = new System.Drawing.Point(278, 54);
-            this.labelPlayer2Score.Name = "labelPlayer2Score";
-            this.labelPlayer2Score.Size = new System.Drawing.Size(35, 13);
-            this.labelPlayer2Score.TabIndex = 3;
-            this.labelPlayer2Score.Text = "Score";
             // 
             // Form1
             // 
