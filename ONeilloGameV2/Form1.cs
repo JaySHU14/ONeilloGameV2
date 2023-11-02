@@ -115,7 +115,7 @@ namespace ONeilloGameV2
         }
         private void CellClicked(object sender, EventArgs e) // event handler for when a cell is clicked
         {
-            Button button = (Button)sender; // create an instance of the button that was clicked
+            Button button = (Button)sender; // create an instance of the button that was clicked. change buttons generated 
             int row = button.Location.Y / cellSize; // calculate which row the button was clicked on
             int col = button.Location.X / cellSize; // calculate which column the button was clicked on
 
@@ -318,12 +318,31 @@ namespace ONeilloGameV2
         private void SwitchPlayer()
         {
             currentPlayer = OtherPlayer();
-            // statusLabel.Text = "Current player: " + (currentPlayer == 1 ? "Black" : "White");
+            statusLabel1.Text = "Current player: " + (currentPlayer == 1 ? "Black" : "White");
         }
 
         private int OtherPlayer()
         {
             return currentPlayer == 1 ? 2 : 1;
+        }
+
+        private void informationPanelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (informationPanelToolStripMenuItem.Checked)
+            {
+                infoPanel.Visible = true;
+            }
+            else
+            {
+                infoPanel.Visible = false;
+            }
+        }
+
+        private void newGameMenuItem_Click(object sender, EventArgs e)
+        {
+            if ()
+                InitialiseBoard();
+                SetBoard();
         }
     }
 }
